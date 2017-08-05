@@ -4,7 +4,7 @@ CONFIGDIR_ENVSUBST_EXTENSION="${CONFIGDIR_ENVSUBST_EXTENSION-tmpl}"
 CONFIGDIR_GIT_REF="${CONFIGDIR_GIT_REF-master}"
 
 # shellcheck source=share/log.sh
-. "$(dirname "${BASH_SOURCE[0]}")/log.sh"
+. "$(dirname "$(realpath "${BASH_SOURCE[0]}")")/log.sh"
 
 validate_config() {
     [ -n "$CONFIGDIR_GIT_URI" ] &&
