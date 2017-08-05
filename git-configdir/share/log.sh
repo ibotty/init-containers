@@ -55,6 +55,7 @@ log::with_level() {
 
     if [ "${LOG_LEVEL[$LOG_VERBOSITY]}" -ge "${LOG_LEVEL["$loglevel"]}" ]; then
         args['level']="$loglevel"
+        args['time']="$(date -Isec)"
 
         while [ "$#" -ge 1 ]; do
 
